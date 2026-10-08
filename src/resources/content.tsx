@@ -2,19 +2,19 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Prosenjit",
+  lastName: "Paul",
+  name: `Prosenjit Paul (aka Ps Prosen)`,
+  role: "AI System Builder",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "psprosen.dev@gmail.com",
+  location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Hindi"], // optional: Leave the array empty if you don't want to display languages
   locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -26,25 +26,19 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/PsProsen-Dev",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/psprosen-dev",
     essential: true,
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "X",
+    icon: "x",
+    link: "https://x.com/PsProsenDev",
     essential: true,
   },
   {
@@ -59,26 +53,28 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name} — AI System Builder`,
+  description: `Portfolio of Prosenjit Paul (aka Ps Prosen), AI System Builder from Maynaguri, West Bengal — founder of We Digital Mitra, an AI-powered digital marketing and automation agency.`,
+  headline: <>I did not learn AI in a classroom. I learned it by building a company that runs without me.</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Featured</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Selected work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work",
   },
   subline: (
     <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} at{" "}
-      <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+      I'm {person.firstName} — an {person.role.toLowerCase()} from Maynaguri, West Bengal, and
+      founder of <Text as="span" size="xl" weight="strong">We Digital Mitra</Text>: a 1-human,
+      100% AI-operated agency building websites, lead-gen pipelines, and automation for local
+      businesses across North Bengal.
     </>
   ),
 };
@@ -87,7 +83,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} from Maynaguri, West Bengal`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -96,7 +92,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -104,9 +100,18 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        {person.firstName} is a {person.location.split("/")[1]?.replace("_", " ")}-based {person.role.toLowerCase()} with a passion for transforming complex challenges
-        into simple, elegant design solutions. Their work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        {person.firstName} is a self-taught {person.role.toLowerCase()} from Maynaguri, West Bengal,
+        and the founder of <strong>We Digital Mitra</strong> — an AI-powered digital marketing and
+        automation agency that runs as "1 human, 100% AI-operated," serving local businesses across
+        8 districts of North Bengal (NH-31 / Dooars corridor).
+        <br /><br />
+        He builds agentic automation systems, local LLM deployments, and CLI tools — and ships
+        client work end to end: business websites, lead-gen pipelines, WhatsApp automation. He is
+        positioning toward <strong>Agentic Systems Architect</strong>: someone who designs the
+        systems in which AI agents do reliable, verifiable work.
+        <br /><br />
+        Credentials: Anthropic Claude 101 certified; approved for Anthropic's Cyber Verification
+        Program. GitHub: @PsProsen-Dev.
       </>
     ),
   },
@@ -115,41 +120,34 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "We Digital Mitra",
+        timeframe: "2024 — Present",
+        role: "Founder · AI System Builder",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Run a 1-human, 100% AI-operated agency serving local businesses across 8 districts of
+            North Bengal — web development, lead-gen pipelines, and WhatsApp automation.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Shipped a complete digital presence for India Hotel & Restaurant Cum Bar (Maynaguri):
+            business website with a ~170-item menu, Google Business Profile, social setup, and
+            business email.
+          </>,
+          <>
+            Build multi-agent automation systems, Google Maps + Sheets lead-gen pipelines, and CLI
+            tools in Python, Rust, and Node.js.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Independent gigs",
+        timeframe: "Until 2026",
+        role: "Retail & digital services",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Ran a mobile accessories shop and worked as a CSC (Common Service Centre) operator —
+            both closed to focus on the agency full-time.
           </>,
         ],
         images: [],
@@ -161,12 +159,16 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Self-taught",
+        description: <>No formal degree — learned by building: Next.js, TypeScript, Python, Rust, AI agent systems, and agency operations.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Class 12 — West Bengal Board",
+        description: <>Arts stream, Bengali medium.</>,
+      },
+      {
+        name: "Anthropic",
+        description: <>Claude 101 certified; approved for the Cyber Verification Program.</>,
       },
     ],
   },
@@ -175,60 +177,64 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Agentic automation",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Multi-agent swarms, lead-gen pipelines (Google Maps + Sheets + Claude), WhatsApp automation, and paper-trade-safe trading bots.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Python",
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Rust",
           },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
           {
-            name: "JavaScript",
+            name: "Node.js",
             icon: "javascript",
           },
+        ],
+        images: [],
+      },
+      {
+        title: "Web development",
+        description: (
+          <>Production Next.js 15 sites with TypeScript, Tailwind CSS, and shadcn/ui — from agency websites to client business sites.</>
+        ),
+        tags: [
           {
             name: "Next.js",
             icon: "nextjs",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "TypeScript",
+            icon: "javascript",
           },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Tailwind CSS",
+          },
+          {
+            name: "shadcn/ui",
           },
         ],
+        images: [],
+      },
+      {
+        title: "Data & trading systems",
+        description: (
+          <>P&L dashboards, data-visualization sites, and Pine Script → webhook automation pipelines (in design/build).</>
+        ),
+        tags: [
+          {
+            name: "Shoonya API",
+          },
+          {
+            name: "Pine Script",
+          },
+          {
+            name: "GitHub Actions",
+          },
+        ],
+        images: [],
       },
     ],
   },
@@ -237,7 +243,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing...",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -247,8 +253,8 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  description: `Selected projects by ${person.name}: client work, trading systems, data visualization, and agentic automation.`,
+  // Create new project pages by adding a new .mdx file to app/work/projects
   // All projects will be listed on the /home and /work routes
 };
 
@@ -257,50 +263,7 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+  images: [],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };

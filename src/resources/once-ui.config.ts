@@ -14,14 +14,14 @@ import {
 import { home, person, social } from "./content";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://demo.magic-portfolio.com";
+const baseURL: string = "https://prosen.wedigitalmitra.com";
 
 const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/blog": false,
+  "/gallery": false,
 };
 
 const display: DisplayConfig = {
@@ -32,35 +32,39 @@ const display: DisplayConfig = {
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
-const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
-};
+const protectedRoutes: ProtectedRoutesConfig = {};
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+// Self-hosted via next/font/local: the sandbox MITM proxy breaks next/font/google
+// at build time, and local fonts also make production builds network-independent.
+// Geist + Geist Mono are OFL-licensed variable fonts from Google Fonts.
+import localFont from "next/font/local";
 
-const heading = Geist({
+const heading = localFont({
+  src: "./fonts/Geist.woff2",
   variable: "--font-heading",
-  subsets: ["latin"],
+  weight: "100 900",
   display: "swap",
 });
 
-const body = Geist({
+const body = localFont({
+  src: "./fonts/Geist.woff2",
   variable: "--font-body",
-  subsets: ["latin"],
+  weight: "100 900",
   display: "swap",
 });
 
-const label = Geist({
+const label = localFont({
+  src: "./fonts/Geist.woff2",
   variable: "--font-label",
-  subsets: ["latin"],
+  weight: "100 900",
   display: "swap",
 });
 
-const code = Geist_Mono({
+const code = localFont({
+  src: "./fonts/GeistMono.woff2",
   variable: "--font-code",
-  subsets: ["latin"],
+  weight: "100 900",
   display: "swap",
 });
 
@@ -72,11 +76,16 @@ const fonts: FontsConfig = {
 };
 
 // default customization applied to the HTML in the main layout.tsx
+// NOTE: "custom" schemes are applied via CSS variables in resources/custom.css
+// (see https://once-ui.com/customize). The installed core's TS types lag behind
+// the template and don't list "custom", so it's cast here — the runtime sets
+// data-neutral/brand/accent="custom" attributes and tokens.css maps them to the
+// --scheme-{name}-* variables, which is verified working.
 const style: StyleConfig = {
   theme: "system", // dark | light | system
-  neutral: "gray", // sand | gray | slate | mint | rose | dusk | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  neutral: "custom" as StyleConfig["neutral"], // sand | gray | slate | mint | rose | dusk | custom
+  brand: "custom" as StyleConfig["brand"], // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: "custom" as StyleConfig["accent"], // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative | sharp
