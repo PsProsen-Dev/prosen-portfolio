@@ -4,7 +4,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Prosenjit",
   lastName: "Paul",
-  name: `Prosenjit Paul (aka Ps Prosen)`,
+  name: `Prosenjit Paul (aka Prosen)`,
   role: "AI System Builder",
   avatar: "/images/avatar.jpg",
   email: "psprosen.dev@gmail.com",
@@ -54,7 +54,7 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name} — AI System Builder`,
-  description: `Portfolio of Prosenjit Paul (aka Ps Prosen), AI System Builder from Maynaguri, West Bengal — founder of We Digital Mitra, an AI-powered digital marketing and automation agency.`,
+  description: `Portfolio of Prosenjit Paul (aka Prosen), AI System Builder from Maynaguri, West Bengal — founder of We Digital Mitra, an AI-powered digital marketing and automation agency.`,
   headline: <>I did not learn AI in a classroom. I learned it by building a company that runs without me.</>,
   featured: {
     display: true,
@@ -71,7 +71,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm {person.firstName} — an {person.role.toLowerCase()} from Maynaguri, West Bengal, and
+      I'm {person.firstName} — an AI System Builder from Maynaguri, West Bengal, and
       founder of <Text as="span" size="xl" weight="strong">We Digital Mitra</Text>: a 1-human,
       100% AI-operated agency building websites, lead-gen pipelines, and automation for local
       businesses across North Bengal.
@@ -100,10 +100,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        {person.firstName} is a self-taught {person.role.toLowerCase()} from Maynaguri, West Bengal,
+        {person.firstName} is a self-taught AI System Builder from Maynaguri, West Bengal,
         and the founder of <strong>We Digital Mitra</strong> — an AI-powered digital marketing and
         automation agency that runs as "1 human, 100% AI-operated," serving local businesses across
-        8 districts of North Bengal (NH-31 / Dooars corridor).
+        8 districts of North Bengal (NH-27, old NH-31 / Dooars corridor).
         <br /><br />
         He builds agentic automation systems, local LLM deployments, and CLI tools — and ships
         client work end to end: business websites, lead-gen pipelines, WhatsApp automation. He is
@@ -142,7 +142,7 @@ const about: About = {
       },
       {
         company: "Independent gigs",
-        timeframe: "Until 2026",
+        timeframe: "2022 — Sep 2026",
         role: "Retail & digital services",
         achievements: [
           <>
